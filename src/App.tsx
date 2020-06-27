@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Use Azure Pipeline to Deploy React App
         </a>
       </header>
     </div>
