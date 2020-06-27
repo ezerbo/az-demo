@@ -6,9 +6,6 @@
 trigger:
 - master
 
-variables:
- uiSource: 'src'
- uiBuild: '$(uiSource)/build'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -29,13 +26,6 @@ steps:
     ls -l build/
     pwd
   displayName: 'npm install and build'
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: 'build'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
